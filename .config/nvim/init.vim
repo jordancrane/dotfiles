@@ -1,3 +1,220 @@
-set tabstop=4
-set shiftwidth=4
-set expandtab 
+" vim-plug {{{
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Make sure you use single quotes
+
+" File manager
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Fast selection of blocks with <CR>
+Plug 'gcmt/wildfire.vim'
+
+" Navigate between tmux panes and vim splits seamlessly
+Plug 'christoomey/vim-tmux-navigator'
+
+" Awesome status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Autocomplete
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-clang'
+"Plug 'Shougo/neoinclude.vim'
+
+" git integrations
+Plug 'tpope/vim-fugitive'
+
+" parens & quotes editing
+Plug 'tpope/vim-surround'
+
+" Syntax checker
+Plug 'w0rp/ale'
+
+" Fast vim motions
+Plug 'easymotion/vim-easymotion'
+
+" Fuzzy Search & tabs
+" Plug 'vim-ctrlspace/vim-ctrlspace'
+
+" {{{ Syntax Highlighters
+" rust highlighting
+Plug 'rust-lang/rust.vim'
+
+" JavaScript Highlighting
+Plug 'pangloss/vim-javascript'
+
+" JSX Highlighting
+Plug 'mxw/vim-jsx'
+
+" }}}
+
+" {{{ Color Schemes
+" Seoul color scheme
+Plug 'junegunn/seoul256.vim'
+
+" Nord color scheme
+Plug 'arcticicestudio/nord-vim'
+
+" }}}
+
+" Initialize plugin system
+call plug#end()
+" }}}
+
+" Appearance {{{
+" colorscheme
+set nohlsearch
+let base16colorspace=256
+" colorscheme seoul256
+colorscheme nord
+" }}}
+
+" Bindings {{{
+nnoremap <Space> <Nop>
+let mapleader = " "
+
+inoremap jk <ESC>
+
+" Quickly edit and source vimrc
+nnoremap <leader>ec :vsplit ~/.config/nvim/init.vim<cr>
+noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
+" }}}
+
+" Buffers {{{
+" Airline show list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nnoremap <C-c> <Nop>
+nnoremap <C-c> :enew<CR>
+
+" Move to the next buffer
+nnoremap <C-n> <Nop>
+nnoremap <C-n> :bnext<CR>
+
+" Move to the previous buffer
+nnoremap <C-p> <Nop>
+nnoremap <C-p> :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nnoremap <C-x> <Nop>
+nnoremap <C-x> :bp <BAR> bw #<CR>
+
+" Show all open buffers and their status
+nnoremap <leader>bl :ls<CR>
+" }}}
+
+" Ctrl-Space {{{
+nnoremap <silent><C-Space> :CtrlSpace O<CR>
+
+set nocompatible
+set hidden
+" }}}
+
+" Deoplete {{{
+"call deoplete#enable()
+"if !exists('g:deoplete#omni#input_patterns')
+"  let g:deoplete#omni#input_patterns = {}
+"endif
+"
+"" deoplete tab-complete
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"
+"g:deoplete#sources#clang#flags = ['-x', 'c++']
+"g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib'
+"g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/lib/clang/5.0.0/include'
+"
+"" omnifuncs
+"augroup omnifuncs
+"  autocmd!
+"  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"augroup end
+" }}}
+
+" Folding {{{
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+
+" leader a opens/closes fold
+nnoremap <leader>a za
+
+" fold based on indent level
+set foldmethod=indent
+"  }}}
+
+" Indentation {{{
+set tabstop    =2
+set softtabstop=2
+set shiftwidth =2
+set expandtab
+set autoindent
+set smartindent
+filetype indent on
+" }}}
+
+" Movement {{{
+" move up and down by visual line
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+" move to beg/end of line
+nnoremap B ^
+nnoremap E $
+"nnoremap ^ <nop>
+"nnoremap $ <nop>
+" }}}
+
+" NerdTree {{{
+nmap <F9> :NERDTreeToggle<CR>
+" }}}
+
+" Splits {{{
+" navigate vim splits like a sane person
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+" more intuitive split opening
+set splitbelow
+set splitright
+"  }}}
+
+" UI Settings {{{
+set number
+set cursorline
+set breakindent
+set showmatch
+set hls
+syntax on
+
+" Yank/put text via system clipboard
+noremap <leader>y "+y
+noremap <leader>yy "+Y
+noremap <leader>p "+p
+
+"  }}}
+
+" Modeline {{{
+set modeline
+set modelines=1
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
