@@ -18,8 +18,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/right]
+monitor = ${env:MONITOR:HDMI-3}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -49,7 +49,7 @@ font-3 = "FontAwesome:size=10;1"
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xkeyboard memory cpu eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -69,6 +69,68 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+[bar/left]
+monitor = ${env:MONITOR:DVI-I-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 2
+padding-right = 0
+
+module-margin-left = 3
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = "Wuncon Siji:pixelsize=10;1"
+font-3 = "FontAwesome:size=10;1"
+
+modules-left = 
+modules-center = player-mpris-simple
+modules-right = bspwm i3
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/player-mpris-simple]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-simple.sh
+interval = 3
+format-prefix = ""
+click-left = playerctl previous
+click-right = playerctl next
+click-middle = playerctl play-pause
 
 [module/xwindow]
 type = internal/xwindow
@@ -126,7 +188,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
