@@ -20,15 +20,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Autocomplete
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
 "Plug 'zchee/deoplete-clang'
 "Plug 'Shougo/neoinclude.vim'
+ 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " git integrations
 Plug 'tpope/vim-fugitive'
 
 " parens & quotes editing
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 " Syntax checker
 Plug 'w0rp/ale'
@@ -68,8 +73,8 @@ call plug#end()
 " colorscheme
 set nohlsearch
 let base16colorspace=256
-" colorscheme seoul256
-colorscheme nord
+colorscheme seoul256
+" colorscheme nord
 " }}}
 
 " Bindings {{{
@@ -117,34 +122,24 @@ nnoremap <leader>bl :ls<CR>
 " }}}
 
 " Ctrl-Space {{{
-nnoremap <silent><C-Space> :CtrlSpace O<CR>
+"nnoremap <silent><C-Space> :CtrlSpace O<CR>
 
 set nocompatible
 set hidden
 " }}}
 
 " Deoplete {{{
-"call deoplete#enable()
-"if !exists('g:deoplete#omni#input_patterns')
-"  let g:deoplete#omni#input_patterns = {}
-"endif
-"
-"" deoplete tab-complete
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-"
-"g:deoplete#sources#clang#flags = ['-x', 'c++']
-"g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib'
-"g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/lib/clang/5.0.0/include'
-"
-"" omnifuncs
-"augroup omnifuncs
-"  autocmd!
-"  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"augroup end
+let g:deoplete#enable_at_startup = 1
+" }}}
+
+" Auto-pairs {{{ "
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
+" }}} Auto-pairs "
+
+" Ultisnips {{{
+inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger="<C-Space>"
 " }}}
 
 " Folding {{{
