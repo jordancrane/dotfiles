@@ -66,6 +66,9 @@ Plug 'junegunn/seoul256.vim'
 " Nord color scheme
 Plug 'arcticicestudio/nord-vim'
 
+" Apprentice color scheme
+Plug 'romainl/Apprentice'
+
 " }}}
 
 " Initialize plugin system
@@ -76,7 +79,7 @@ call plug#end()
 " colorscheme
 set nohlsearch
 let base16colorspace=256
-colorscheme seoul256
+colorscheme apprentice
 " colorscheme nord
 " }}}
 
