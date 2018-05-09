@@ -41,6 +41,9 @@ Plug 'w0rp/ale'
 " Fast vim motions
 Plug 'easymotion/vim-easymotion'
 
+" Fast pattern search
+Plug 'mileszs/ack.vim'
+
 " Fuzzy Search & tabs
 " Plug 'vim-ctrlspace/vim-ctrlspace'
 
@@ -121,6 +124,10 @@ nnoremap <C-x> :bp <BAR> bw #<CR>
 nnoremap <leader>bl :ls<CR>
 " }}}
 
+" ack.vim {{{
+let g:ackprg = 'ag --vimgrep'
+" }}} ack.vim "
+
 " Ctrl-Space {{{
 "nnoremap <silent><C-Space> :CtrlSpace O<CR>
 
@@ -132,14 +139,14 @@ set hidden
 let g:deoplete#enable_at_startup = 1
 " }}}
 
-" Auto-pairs {{{ "
+" Auto-pairs {{{
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-" }}} Auto-pairs "
+" }}} Auto-pairs
 
 " Ultisnips {{{
 inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsExpandTrigger="<C-CR>"
 " }}}
 
 " Folding {{{
@@ -155,9 +162,9 @@ set foldmethod=indent
 "  }}}
 
 " Indentation {{{
-set tabstop    =4
-set softtabstop=4
-set shiftwidth =4
+set tabstop    =2
+set softtabstop=2
+set shiftwidth =2
 set expandtab
 set autoindent
 set smartindent
