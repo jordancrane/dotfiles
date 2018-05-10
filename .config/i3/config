@@ -23,13 +23,10 @@ font pango:monospace 9
 # font, it doesn’t scale on retina/hidpi displays.
 
 # thin borders
-#hide_edge_borders both
 default_border pixel 0
 
 # i3-gaps
-gaps inner10 
-smart_borders on
-
+gaps inner 6
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
