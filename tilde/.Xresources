@@ -58,28 +58,67 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+#define apprenticeBg #262626
+#define apprenticeFg #bcbcbc
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+#define apprentice0 #1C1C1C
+#define apprentice1 #AF5F5F
+#define apprentice2 #5F875F
+#define apprentice3 #87875F
+#define apprentice4 #5F87AF
+#define apprentice5 #5F5F87
+#define apprentice6 #5F8787
+#define apprentice7 #6C6C6C
+#define apprentice8 #444444
+#define apprentice9 #FF8700
+#define apprentice10 #87AF87
+#define apprentice11 #FFFFAF
+#define apprentice12 #8FAFD7
+#define apprentice13 #8787AF
+#define apprentice14 #5FAFAF
+#define apprentice15 #FFFFFF
+
+#define seoul0  #4e4e4e
+#define seoul1  #d68787
+#define seoul2  #5f865f
+#define seoul3  #d8af5f
+#define seoul4  #85add4
+#define seoul5  #d7afaf
+#define seoul6  #87afaf
+#define seoul7  #d0d0d0
+#define seoul8  #626262
+#define seoul9  #d75f87
+#define seoul10 #87af87
+#define seoul11 #ffd787 
+#define seoul12 #add4fb
+#define seoul13 #ffafaf
+#define seoul14 #87d7d7
+#define seoul15 #e4e4e4
+
+! Fg could be apprentice4
+*.foreground:   apprenticeFg
+! Bg could be apprentice0
+*.background:   apprenticeBg
+*.cursorColor:  apprentice4
+*fading: 35
+*fadeColor:     apprentice3
+
+*.color0:       apprentice1
+*.color1:       apprentice11
+*.color2:       apprentice14
+*.color3:       apprentice13
+*.color4:       apprentice9
+*.color5:       apprentice15
+*.color6:       apprentice8
+*.color7:       apprentice5
+*.color8:       apprentice3
+*.color9:       apprentice11
+*.color10:      apprentice14
+*.color11:      apprentice13
+*.color12:      apprentice9
+*.color13:      apprentice15
+*.color14:      apprentice7
+*.color15:      apprentice6
 
 ! }}}
 
