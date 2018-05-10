@@ -50,9 +50,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = "FontAwesome:size=10;1"
 
-modules-left = i3
+modules-left = 
 ;modules-left = bspwm
-modules-center = 
+modules-center = i3
 modules-right = filesystem xkeyboard memory cpu eth temperature date powermenu
 
 tray-position = right
@@ -103,9 +103,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = "FontAwesome:size=10;1"
 
-modules-left = 
-modules-center = player-mpris-simple
-modules-right = i3
+modules-left = player-mpris-simple
+modules-center = i3 
+modules-right = 
 ;modules-right = bspwm
 
 tray-position = right
