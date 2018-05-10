@@ -38,7 +38,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -combi-modi window#drun#ssh -theme ~/.config/rofi/themes/official-themes/arthur.rasi -show combi 
+bindsym $mod+d exec rofi -combi-modi window#drun#ssh -theme ~/.config/rofi-themes/Official\ Themes/sidebar.rasi -show combi 
 
 # change focus
 bindsym $mod+h focus left
