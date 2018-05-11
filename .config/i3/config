@@ -206,12 +206,12 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 exec --no-startup-id nm-applet
 exec --no-startup-id "~/.fehbg &" #Reset background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "setxkbmap -option 'ctrl:nocaps'" #Make Caps_Lock another Control
 exec --no-startup-id "udiskie --automount" #Mount jump drives
 exec --no-startup-id "dunst" #Init notifications
-exec --no-startup-id "sudo systemctl start sshd" #Launch ssh daemon
 exec --no-startup-id "$HOME/.config/logitech-marble-mouse/setup.sh left-hand" #Configure marble mouse
+exec --no-startup-id "/usr/lib/deja-dup/deja-dup-monitor" #Start deja-dup daemon
+exec --no-startup-id "cd /mnt/Data_drive; vagrant up" #Start CDE
 # On restart
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh" #Launch status bars
 exec_always --no-startup-id "compton -cC --inactive-dim 0.2" #--config ~/.config/compton/compton.conf" #Set var to false to fix https://github.com/chjj/compton/issues/477
