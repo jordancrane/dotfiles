@@ -26,7 +26,7 @@ font pango:monospace 9
 default_border pixel 0
 
 # i3-gaps
-gaps inner 6
+gaps inner 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -212,6 +212,7 @@ exec --no-startup-id "dunst" #Init notifications
 exec --no-startup-id "$HOME/.config/logitech-marble-mouse/setup.sh left-hand" #Configure marble mouse
 exec --no-startup-id "/usr/lib/deja-dup/deja-dup-monitor" #Start deja-dup daemon
 exec --no-startup-id "cd /mnt/Data_drive; vagrant up" #Start CDE
+exec --no-startup-id "$HOME/.config/polybar/launch.sh" #Launch status bars
+exec --no-startup-id "compton -cC --inactive-dim 0.3"
 # On restart
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh" #Launch status bars
-exec_always --no-startup-id "compton -cC --inactive-dim 0.2" #--config ~/.config/compton/compton.conf" #Set var to false to fix https://github.com/chjj/compton/issues/477
+# exec_always --no-startup-id do-something
