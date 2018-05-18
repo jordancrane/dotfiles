@@ -57,6 +57,10 @@ Plug 'pangloss/vim-javascript'
 " JSX Highlighting
 Plug 'mxw/vim-jsx'
 
+" Semantic Highlighting
+Plug 'jaxbot/semantic-highlight.vim'
+
+
 " }}}
 
 " {{{ Color Schemes
@@ -127,6 +131,10 @@ nnoremap <C-x> :bp <BAR> bw #<CR>
 nnoremap <leader>bl :ls<CR>
 " }}}
 
+" Semantic Highlighting {{{
+nnoremap <Leader>s :SemanticHighlightToggle<cr>
+" }}}
+
 " ack.vim {{{
 let g:ackprg = 'ag --vimgrep'
 " }}} ack.vim "
@@ -143,7 +151,7 @@ let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Auto-pairs {{{
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 " }}} Auto-pairs
 

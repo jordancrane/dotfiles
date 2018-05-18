@@ -11,4 +11,4 @@ polybar -q right &
 polybar -q left &
 
 
-echo "Bars launched..."
+echo "Spittin' bars..."
